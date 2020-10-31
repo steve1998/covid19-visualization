@@ -1,0 +1,13 @@
+{
+    "date": 1,
+    "new_confirmed": 15,
+    "new_deceased": 16,
+    "new_recovered": 17,
+    "new_tested": 18,
+    "total_confirmed": 19,
+    "total_deceased": 20,
+    "total_recovered": 21,
+    "total_tested": 22,
+    "new_hospitalized": 23,
+    "total_hospitalized": 24
+}
