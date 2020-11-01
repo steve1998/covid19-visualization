@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TextCard from '../../components/text-card/TextCard';
+import TextCard from '../../components/textCard/TextCard';
 import { fetchData } from '../../middleware/api';
 import { CovidObject } from '../../types/covid';
 import { formatNumber } from '../../helpers/format';
@@ -20,7 +20,7 @@ export default function Dashboard() {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <span className="title">COVID-19 Statistics (US)</span>
+                    <span className="title">COVID-19 Statistics (US only)</span>
                     <div className="w-100"></div>
                     <span>The idea for this COVID-19 statistics tracker is to provide a cleaner and simpler take on some of the important data on COVID-19. This site is an update from my previus COVID-19 Tracker. This dashboard is made using D3.js to visualize the data and the dataset is provided by Google.</span>
                     <div className="w-100"></div>
