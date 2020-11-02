@@ -1,5 +1,5 @@
 export interface CovidObject {
-    "date": Date;
+    "date": number;
     "new_confirmed": number,
     "new_deceased": number,
     "new_recovered": number,

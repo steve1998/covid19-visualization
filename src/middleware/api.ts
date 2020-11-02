@@ -18,7 +18,7 @@ function processData(data: any) {
 
     records.forEach(record => {
         if (record[legend.date] !== null && record[legend.total_confirmed] !== null && record[legend.total_deceased] !== null && record[legend.new_confirmed] !== null && record[legend.new_deceased] !== null) {
-            const date = Date.parse(record[legend.date]);
+            const date: number = Date.parse(record[legend.date]);
 
             let object: any = {
                 "date": date,

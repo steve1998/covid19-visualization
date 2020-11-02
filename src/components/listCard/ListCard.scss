@@ -1,11 +1,17 @@
 .horizontal {
-    border: solid 1px black;
+    border: solid .05rem black;
 }
 
-.cases {
-    background-color: white;
+.table-list {
+    max-height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .cases:hover {
-    background-color: grey;
+    background-color: rgba(185,185,185,0.5);
+}
+
+.subheading {
+    font-weight: 600;
 }

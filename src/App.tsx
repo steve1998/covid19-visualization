@@ -4,7 +4,7 @@ import Dashboard from './views/dashboard/Dashboard';
 
 function App() {
   return (
-    <div className="m-4">
+    <div>
       <Dashboard />
     </div>
   );

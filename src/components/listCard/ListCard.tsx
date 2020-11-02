@@ -1,37 +1,39 @@
 import React from 'react';
 import { CovidObject } from '../../types/covid';
+import { formatDate } from '../../helpers/format';
+import './ListCard.scss';
 
 export default function ListCard(props: { data: Array<CovidObject> }) {
     const { data } = props;
 
     return(
-        <div className="row p-4 rounded shadow">
+        <div className="row p-4 table-list rounded shadow">
             <div className="col">
                 <div className="row pb-4">
                     <div className="col">
-                        <span>Date</span>
+                        <span className="subheading">Date</span>
                     </div>
                     <div className="col">
-                        <span>Total Cases</span>
+                        <span className="subheading">Total Cases</span>
                     </div>
                     <div className="col">
-                        <span>Total Deaths</span>
+                        <span className="subheading">Total Deaths</span>
                     </div>
                     <div className="col">
-                        <span>New Cases</span>
+                        <span className="subheading">New Cases</span>
                     </div>
                     <div className="col">
-                        <span>New Deaths</span>
+                        <span className="subheading">New Deaths</span>
                     </div>
                 </div>
                 {
                     data.map(d => {
                         return(
-                            <div className="row cases py-2">
+                            <div className="row cases rounded py-3">
                                 <div className="col">
                                     <div className="row">
                                         <div className="col">
-                                            <span>{d.date}</span>
+                                            <span>{formatDate(d.date)}</span>
                                         </div>
                                         <div className="col">
                                             <span>{d.total_confirmed}</span>
@@ -46,7 +48,6 @@ export default function ListCard(props: { data: Array<CovidObject> }) {
                                             <span>{d.new_deceased}</span>
                                         </div>
                                     </div>
-                                    <div className="horizontal"></div>
                                 </div>
                             </div>
                             

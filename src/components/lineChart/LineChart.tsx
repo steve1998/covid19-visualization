@@ -8,7 +8,7 @@ export function LineChart(props: { data: Array<CovidObject>, labels: Array<strin
     let datasetConfirmed: Array<number> = [];
     let datasetDeceased: Array<number> = [];
 
-    const date: Array<Date> = data.map(d => {
+    const date: Array<number> = data.map(d => {
         return d.date;
     })
 
