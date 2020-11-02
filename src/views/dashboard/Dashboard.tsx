@@ -27,7 +27,7 @@ export default function Dashboard() {
                     <div className="col">
                         <span className="title">COVID-19 Statistics (US only)</span>
                         <div className="w-100"></div>
-                        <span>The idea for this COVID-19 statistics tracker is to provide a cleaner and simpler take on some of the important data on COVID-19. This site is an update from my previous COVID-19 Tracker. This dashboard is made using Chart.js to visualize the data and the dataset is provided by Google.</span>
+                        <span>The idea for this COVID-19 statistics tracker is to provide a cleaner and simpler take on some of the important data on COVID-19. This site is an update from my previous COVID-19 Tracker. This dashboard is made using the dataset is provided by Google.</span>
                         <div className="w-100"></div>
                     </div>
                 </div>
