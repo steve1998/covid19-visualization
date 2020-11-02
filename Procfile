@@ -1,1 +1,1 @@
-web: node ./server/index.js
+web: yarn build && yarn start-backend
