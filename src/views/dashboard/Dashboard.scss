@@ -8,9 +8,13 @@
     font-size: 40px;
 }
 
+.wrapper {
+    min-height: 100%;
+}
+
 .footer {
-    margin-top: 2em;
     padding: 3em 2em;
+    margin-top: 2em;
 }
 
 .heading-section:hover {

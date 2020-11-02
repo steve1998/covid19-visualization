@@ -32,8 +32,8 @@ export default function Dashboard() {
     }
 
     return(
-        <div>
-            <Container className="p-4">
+        <div className="d-flex flex-column min-vh-100">
+            <Container className="p-4 flex-grow-1">
                 <Row>
                     <Col>
                         <span className="title">COVID-19 Statistics (US only)</span>
@@ -109,7 +109,7 @@ export default function Dashboard() {
                     </Col>
                 </Row>
             </Container>
-            <footer className="d-flex justify-content-between bg-dark w-100 text-white footer">
+            <footer className="d-flex justify-content-between bg-dark w-100 text-white sticky-bottom footer">
                 <span>Powered by React, Chart.js and Bootstrap.</span>
                 <span>Contact: nicholassteven998@gmail.com</span>
             </footer>
