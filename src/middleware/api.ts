@@ -18,8 +18,10 @@ function processData(data: any) {
 
     records.forEach(record => {
         if (record[legend.date] !== null && record[legend.total_confirmed] !== null && record[legend.total_deceased] !== null && record[legend.new_confirmed] !== null && record[legend.new_deceased] !== null) {
+            const date = Date.parse(record[legend.date]);
+
             let object: any = {
-                "date": record[legend.date],
+                "date": date,
                 "new_confirmed": record[legend.new_confirmed],
                 "new_deceased": record[legend.new_deceased],
                 "new_recovered": record[legend.new_recovered],
@@ -35,6 +37,6 @@ function processData(data: any) {
             processedData.push(object);
         }
     });
-    
+        
     return processedData;
 }
