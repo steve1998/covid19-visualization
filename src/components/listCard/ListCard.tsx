@@ -1,6 +1,6 @@
 import React from 'react';
 import { CovidObject } from '../../types/covid';
-import { formatDate } from '../../helpers/format';
+import { formatDate, formatNumber } from '../../helpers/format';
 import './ListCard.scss';
 
 export default function ListCard(props: { data: Array<CovidObject> }) {
@@ -36,16 +36,16 @@ export default function ListCard(props: { data: Array<CovidObject> }) {
                                             <span>{formatDate(d.date)}</span>
                                         </div>
                                         <div className="col">
-                                            <span>{d.total_confirmed}</span>
+                                            <span>{formatNumber(d.total_confirmed)}</span>
                                         </div>
                                         <div className="col">
-                                            <span>{d.total_deceased}</span>
+                                            <span>{formatNumber(d.total_deceased)}</span>
                                         </div>
                                         <div className="col">
-                                            <span>{d.new_confirmed}</span>
+                                            <span>{formatNumber(d.new_confirmed)}</span>
                                         </div>
                                         <div className="col">
-                                            <span>{d.new_deceased}</span>
+                                            <span>{formatNumber(d.new_deceased)}</span>
                                         </div>
                                     </div>
                                 </div>
