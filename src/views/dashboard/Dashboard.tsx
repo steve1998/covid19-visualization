@@ -36,9 +36,9 @@ export default function Dashboard() {
             <Container className="p-4 flex-grow-1">
                 <Row>
                     <Col>
-                        <span className="title">COVID-19 Statistics (US only)</span>
+                        <span className="title">COVID-19 Notebook (US only)</span>
                         <div className="w-100"></div>
-                        <span>The idea for this COVID-19 statistics tracker is to provide a cleaner and simpler take on some of the important data on COVID-19. This site is an update from my previous COVID-19 Tracker. This dashboard is made using the dataset is provided by Google.</span>
+                        <span>The idea for this COVID-19 notebook is to provide a cleaner and simpler take on some of the important data on COVID-19. This site is an update from my previous COVID-19 Tracker. This dashboard is made using the dataset is provided by Google.</span>
                         <div className="w-100"></div>
                     </Col>
                 </Row>
