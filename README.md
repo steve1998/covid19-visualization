@@ -1,4 +1,4 @@
-# COVID 19 Tracker
+# COVID-19 Tracker
 A notebook-style web app to display COVID-19 statistics.
 Data provided by Google COVID-19 public dataset.
 
