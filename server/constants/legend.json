@@ -1,5 +1,6 @@
 {
     "date": 1,
+    "state": 6,
     "new_confirmed": 15,
     "new_deceased": 16,
     "new_recovered": 17,

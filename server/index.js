@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-const fetchDataGoogle = require('./api');
+const api = require("./api");
 
 // add middlewares
 app.use(express.static(path.join(__dirname, "..", "build")));
@@ -11,10 +11,15 @@ app.get('/hello', (req, res) => {
     res.send('Hello World!');
 })
 
-app.get('/fetchData', async (req, res) => {    
-    const key = req.query.key;
-    const payload = await fetchDataGoogle(key);
+app.get('/fetchDataStates', async(req, res) => {
+    const payload = await api.fetchDataStates();
+    
+    res.send(payload);
+});
 
+app.get('/fetchDataCountry', async (req, res) => {    
+    const payload = await api.fetchDataCountry();
+    
     res.send(payload);
 });
 
