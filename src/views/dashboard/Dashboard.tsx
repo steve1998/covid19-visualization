@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import TextCard from '../../components/textCard/TextCard';
 import ListCard from '../../components/listCard/ListCard';
-import { fetchData } from '../../middleware/api';
-import { CovidObject } from '../../types/covid';
+import { fetchDataCountry, fetchDataStates } from '../../middleware/api';
+import { CovidObject, CovidStatesObject } from '../../types/covid';
 import { formatDate, formatNumber } from '../../helpers/format';
 import { LineChart } from '../../components/lineChart/LineChart';
 import { Collapse, Row, Col, Container } from 'reactstrap';
 import './Dashboard.scss';
+import { BarChart } from '../../components/barChart/BarChart';
 
 export default function Dashboard() {
     const [data, setData] = useState<Array<CovidObject>>([]);
+    const [statesData, setStatesData] = useState <Array<CovidStatesObject>>([]);
     const [isOpenTotal, setIsOpenTotal] = useState<boolean>(true);
     const [isOpenNew, setIsOpenNew] = useState<boolean>(true);
+    const [isOpenState, setIsOpenState] = useState<boolean>(true);
     const labelArray1: Array<string> = ['Total Cases to Date', 'Total Deaths to Date'];
     const labelArray2: Array<string> = ['New Cases per Day', 'New Deaths per Day'];
 
     useEffect(() => {
-        fetchData('US').then((res) => {
+        fetchDataCountry().then((res) => {
             setData(res);
+        })
+
+        fetchDataStates().then((res) => {
+            setStatesData(res);
         })
     })
 
@@ -29,6 +36,10 @@ export default function Dashboard() {
 
     const toggleNew = () => {
         setIsOpenNew(!isOpenNew);
+    }
+
+    const toggleState = () => {
+        setIsOpenState(!isOpenState);
     }
 
     return(
@@ -99,6 +110,22 @@ export default function Dashboard() {
                         <Collapse isOpen={isOpenNew}>
                             {
                                 typeof(data) !== undefined ? <LineChart data={data} labels={labelArray2}/> : null
+                            }
+                        </Collapse>
+                    </Col>
+                </Row>
+                <Row className="pt-4">
+                    <Col>
+                        <div className="heading-section" onClick={toggleState}>
+                            <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-link-45deg mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                                <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
+                            </svg>
+                            <span className="heading">Total Cases and Deaths per State</span>
+                        </div>
+                        <Collapse isOpen={isOpenState}>
+                            {
+                                typeof(statesData) !== undefined ? <BarChart data={statesData}/> : null
                             }
                         </Collapse>
                     </Col>

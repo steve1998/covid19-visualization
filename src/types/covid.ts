@@ -5,3 +5,10 @@ export interface CovidObject {
     "total_confirmed": number,
     "total_deceased": number,
 }
+
+export interface CovidStatesObject {
+    "date": number;
+    "state": string;
+    "total_confirmed": number,
+    "total_deceased": number,
+}
